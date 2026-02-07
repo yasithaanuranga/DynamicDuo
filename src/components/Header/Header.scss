@@ -1,0 +1,191 @@
+.header {
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  &__container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+    @media (max-width: 639px) {
+      padding: 0 0.5rem;
+    }
+
+    @media (min-width: 640px) {
+      padding: 0 1.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      padding: 0 2rem;
+    }
+
+    @media (min-width: 1280px) {
+      max-width: 80rem;
+      padding: 0 2.5rem;
+    }
+
+    @media (min-width: 1536px) {
+      max-width: 96rem;
+      padding: 0 3rem;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+
+    @media (min-width: 768px) {
+      padding: 1.5rem 0;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111827;
+
+    @media (min-width: 768px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+  }
+
+  &__nav-link {
+    color: #6b7280;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #111827;
+    }
+  }
+
+  &__cta {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: block;
+    }
+  }
+
+  &__button {
+    background-color: #2563eb;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: #1d4ed8;
+    }
+  }
+
+  &__mobile-menu {
+    display: block;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__mobile-toggle {
+    background-color: #f3f4f6;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    color: #6b7280;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: #374151;
+      background-color: #e5e7eb;
+    }
+
+    &:focus {
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+      box-shadow: 0 0 0 2px #3b82f6;
+    }
+  }
+
+  &__hamburger,
+  &__close {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
+  &__mobile-nav {
+    border-top: 1px solid #e5e7eb;
+  }
+
+  &__mobile-nav-content {
+    padding: 0.5rem 0.5rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    background-color: #ffffff;
+  }
+
+  &__mobile-nav-link {
+    padding: 0.75rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #6b7280;
+    border-radius: 0.375rem;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: #111827;
+      background-color: #f9fafb;
+    }
+  }
+
+  &__mobile-cta {
+    padding: 0.75rem;
+  }
+
+  &__mobile-button {
+    width: 100%;
+    background-color: #2563eb;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: #1d4ed8;
+    }
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
