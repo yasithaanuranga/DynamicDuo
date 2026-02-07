@@ -68,7 +68,7 @@ const Hero = () => {
         <div className="hero__glow hero__glow--1"></div>
         <div className="hero__glow hero__glow--2"></div>
       </div>
-      <FeaturesShowcase />
+      {/* <FeaturesShowcase /> */}
     </section>
   );
 };
