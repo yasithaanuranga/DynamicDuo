@@ -1,0 +1,322 @@
+@use '../../styles/index' as *;
+
+.features-showcase {
+  position: relative;
+  background: linear-gradient(135deg, $elegant-navy-darkest 0%, $elegant-navy 25%, $elegant-purple-dark 50%, $elegant-navy 75%, $elegant-navy-darkest 100%);
+  color: $white;
+  padding: 3rem 1.5rem;
+  overflow: hidden;
+  border-radius: 20px;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% - 2rem);
+  margin: 2rem 1rem;
+  box-sizing: border-box;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4),
+              inset 0 -1px 0 rgba(255, 255, 255, 0.05),
+              inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  transform-style: preserve-3d;
+  perspective: 2000px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.3) 0%,
+      transparent 10%,
+      transparent 90%,
+      rgba(0, 0, 0, 0.3) 100%
+    );
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  @media (min-width: 768px) {
+    padding: 4rem 2.5rem;
+    min-height: 450px;
+    width: calc(100% - 4rem);
+    margin: 2rem;
+    border-radius: 30px;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 5rem 4rem;
+    min-height: 500px;
+    width: calc(100% - 6rem);
+    margin: 2rem 3rem;
+    border-radius: 40px;
+    transform: perspective(2000px) rotateY(0deg);
+    box-shadow: 
+      -30px 0 50px -20px rgba($elegant-purple-light, 0.3),
+      30px 0 50px -20px rgba($elegant-purple-medium, 0.3),
+      0 20px 60px rgba(0, 0, 0, 0.4),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.05),
+      inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  }
+
+  @media (min-width: 1280px) {
+    max-width: 1500px;
+    margin: 2rem auto;
+    padding: 5.5rem 5rem;
+    min-height: 550px;
+    border-radius: 50px;
+  }
+
+  &__glow {
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(
+      circle,
+      rgba($elegant-purple-light, 0.25) 0%,
+      rgba($elegant-amber, 0.15) 40%,
+      transparent 70%
+    );
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+    animation: float 8s ease-in-out infinite;
+  }
+
+  &__container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  &__content {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+    z-index: 2;
+
+    @media (min-width: 768px) {
+      margin-bottom: 3.5rem;
+    }
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, $elegant-gold-lightest 0%, $elegant-gold 30%, $accent-light 60%, $elegant-purple-pale 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.5px;
+    filter: drop-shadow(0 2px 20px rgba($elegant-gold, 0.3));
+    animation: shimmer 3s ease-in-out infinite;
+
+    @media (min-width: 768px) {
+      font-size: 2.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 3rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1rem;
+    color: $elegant-purple-lightest;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+
+    @media (min-width: 768px) {
+      font-size: 1.1rem;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+    justify-items: center;
+    position: relative;
+    z-index: 2;
+
+    @media (min-width: 768px) {
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      gap: 2rem;
+    }
+  }
+
+  &__card {
+    background: linear-gradient(
+      135deg,
+      rgba($elegant-purple-dark, 0.5) 0%,
+      rgba($elegant-purple, 0.4) 100%
+    );
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba($elegant-gold, 0.2);
+    border-radius: 24px;
+    padding: 1.5rem;
+    text-align: center;
+    width: 100%;
+    max-width: 240px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.15),
+        transparent
+      );
+      transition: left 0.6s ease;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 24px;
+      padding: 1px;
+      background: linear-gradient(
+        135deg,
+        rgba($elegant-purple-lighter, 0.3),
+        rgba($elegant-purple-pale, 0.3),
+        rgba($elegant-purple-lighter, 0.3)
+      );
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    &:hover {
+      background: linear-gradient(
+        135deg,
+        rgba($elegant-purple, 0.5) 0%,
+        rgba($accent-dark, 0.4) 100%
+      );
+      border-color: rgba($elegant-gold, 0.6);
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 60px rgba($elegant-purple-light, 0.4),
+                  0 0 0 1px rgba($elegant-gold, 0.3),
+                  inset 0 1px 0 rgba($elegant-gold, 0.1);
+
+      &::before {
+        left: 100%;
+      }
+
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    @media (min-width: 768px) {
+      padding: 2rem;
+    }
+  }
+
+  &__card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    animation: float-icon 3s ease-in-out infinite;
+    filter: drop-shadow(0 4px 12px rgba($elegant-gold, 0.3));
+    position: relative;
+    transition: all 0.3s ease;
+
+    .features-showcase__card:hover & {
+      transform: translateY(-5px) scale(1.15) rotate(5deg);
+      filter: drop-shadow(0 8px 20px rgba($elegant-gold, 0.5));
+    }
+
+    @media (min-width: 768px) {
+      font-size: 3rem;
+    }
+  }
+
+  &__card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, $elegant-gold-lightest 0%, $elegant-purple-lightest 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all 0.3s ease;
+
+    .features-showcase__card:hover & {
+      background: linear-gradient(135deg, $elegant-gold 0%, $elegant-purple-pale 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 2px 8px rgba($elegant-gold, 0.4));
+    }
+
+    @media (min-width: 768px) {
+      font-size: 1.1rem;
+    }
+  }
+
+  &__card-desc {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
+    line-height: 1.5;
+    transition: all 0.3s ease;
+
+    .features-showcase__card:hover & {
+      color: rgba(255, 255, 255, 0.95);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-30px) rotate(10deg);
+    opacity: 0.9;
+  }
+}
+
+@keyframes float-icon {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.05);
+  }
+}

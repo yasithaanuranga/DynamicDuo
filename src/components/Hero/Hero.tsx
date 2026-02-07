@@ -4,9 +4,9 @@ import './Hero.scss';
 const Hero = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const images = [
-    { src: 'https://picsum.photos/1000/500?random=1', alt: 'Business meeting' },
-    { src: 'https://picsum.photos/1000/500?random=2', alt: 'Team collaboration' },
-    { src: 'https://picsum.photos/1000/500?random=3', alt: 'Innovation' },
+    { src: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=600&fit=crop', alt: 'Digital Innovation' },
+    { src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop', alt: 'Team Collaboration' },
+    { src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&h=600&fit=crop', alt: 'Future Technology' },
   ];
 
   useEffect(() => {
@@ -23,28 +23,32 @@ const Hero = () => {
           <div
             key={index}
             className={`hero__slide ${index === currentImage ? 'hero__slide--active' : ''}`}
-            style={{ backgroundImage: `url(${image.src})` }}
-          />
+          >
+            <img src={image.src} alt={image.alt} className="hero__image" />
+            <div className="hero__image-glass" />
+          </div>
         ))}
         <div className="hero__overlay" />
-        <div className="hero__content">
-          <div className="hero__text">
-            <h2 className="hero__title">
-              Welcome to DynamicDuo
-            </h2>
-            <p className="hero__subtitle">
-              Empowering businesses with innovative solutions. We help you grow, scale, and succeed in today's competitive market.
-            </p>
-            <div className="hero__actions">
-              <div className="hero__action">
-                <button className="hero__button hero__button--primary">
-                  Learn More
-                </button>
-              </div>
-              <div className="hero__action">
-                <button className="hero__button hero__button--secondary">
-                  Contact Us
-                </button>
+        <div className="hero__glass-panel">
+          <div className="hero__content">
+            <div className="hero__text">
+              <h2 className="hero__title">
+                Transform Your Business
+              </h2>
+              <p className="hero__subtitle">
+                Experience the future of digital innovation with cutting-edge solutions designed to elevate your business to new heights.
+              </p>
+              <div className="hero__actions">
+                <div className="hero__action">
+                  <button className="hero__button hero__button--primary">
+                    Get Started
+                  </button>
+                </div>
+                <div className="hero__action">
+                  <button className="hero__button hero__button--secondary">
+                    Learn More
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -56,9 +60,12 @@ const Hero = () => {
               key={index}
               onClick={() => setCurrentImage(index)}
               className={`hero__indicator ${index === currentImage ? 'hero__indicator--active' : ''}`}
+              aria-label={`Go to slide ${index + 1}`}
             />
           ))}
         </div>
+        <div className="hero__glow hero__glow--1"></div>
+        <div className="hero__glow hero__glow--2"></div>
       </div>
     </section>
   );

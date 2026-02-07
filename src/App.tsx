@@ -1,12 +1,21 @@
-import { Header, Banner, Hero, Features, About, Contact, Footer } from './components';
-import './App.scss';
+import {
+  Header,
+  FeaturesShowcase,
+  Hero,
+  Features,
+  About,
+  Contact,
+  Footer,
+} from "./components";
+import "./App.scss";
 
 function App() {
   return (
     <div className="app">
-      <Banner />
+      {" "}
       <Header />
-      <Hero />
+      <Hero /> 
+      <FeaturesShowcase />
       <Features />
       <About />
       <Contact />
