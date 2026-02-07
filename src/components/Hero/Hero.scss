@@ -1,3 +1,5 @@
+@use '../../styles/index' as *;
+
 .hero {
   position: relative;
   overflow: hidden;
@@ -35,10 +37,10 @@
   &__overlay {
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: $overlay-dark;
 
     @media (min-width: 768px) {
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: $overlay-darker;
     }
   }
 
@@ -83,7 +85,7 @@
   &__title {
     font-size: 1.875rem;
     font-weight: 800;
-    color: #ffffff;
+    color: $color-text-white;
     line-height: 1.2;
     margin-bottom: 1rem;
 
@@ -118,7 +120,7 @@
     max-width: 28rem;
     margin: 0 auto 1.5rem;
     font-size: 1rem;
-    color: #e5e7eb;
+    color: $gray-200;
     line-height: 1.5;
 
     @media (min-width: 640px) {
@@ -186,21 +188,21 @@
     transition: all 0.2s ease;
 
     &--primary {
-      background-color: #2563eb;
-      color: #ffffff;
+      background-color: $color-button-primary;
+      color: $color-button-primary-text;
 
       &:hover {
-        background-color: #1d4ed8;
+        background-color: $color-button-primary-hover;
       }
     }
 
     &--secondary {
-      background-color: #ffffff;
-      color: #2563eb;
-      border: 1px solid #ffffff;
+      background-color: $color-button-secondary;
+      color: $color-button-secondary-text;
+      border: 1px solid $white;
 
       &:hover {
-        background-color: #f9fafb;
+        background-color: $color-button-secondary-hover;
       }
     }
 
@@ -238,7 +240,7 @@
     }
 
     &--active {
-      background-color: #ffffff;
+      background-color: $white;
       transform: scale(1.25);
     }
   }

@@ -1,6 +1,8 @@
+@use '../../styles/index' as *;
+
 .features {
   padding: 4rem 0;
-  background-color: #f9fafb;
+  background-color: $color-background;
 
   @media (min-width: 768px) {
     padding: 6rem 0;
@@ -46,7 +48,7 @@
   &__title {
     font-size: 1.875rem;
     font-weight: 800;
-    color: #111827;
+    color: $color-text-primary;
 
     @media (min-width: 768px) {
       font-size: 2.25rem;
@@ -57,7 +59,7 @@
     margin-top: 1rem;
     max-width: 32rem;
     font-size: 1.125rem;
-    color: #6b7280;
+    color: $color-text-secondary;
     line-height: 1.6;
 
     @media (min-width: 768px) {
@@ -84,7 +86,7 @@
   }
 
   &__card {
-    background-color: #ffffff;
+    background-color: $color-background-light;
     padding: 1.5rem;
     border-radius: 0.5rem;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
@@ -118,18 +120,18 @@
     border-radius: 0.5rem;
 
     &--blue {
-      background-color: #dbeafe;
-      color: #2563eb;
+      background-color: $primary-blue-lightest;
+      color: $primary-blue;
     }
 
     &--green {
-      background-color: #dcfce7;
-      color: #059669;
+      background-color: $success-light;
+      color: $success;
     }
 
     &--purple {
-      background-color: #f3e8ff;
-      color: #7c3aed;
+      background-color: $accent-light;
+      color: $accent;
     }
   }
 
@@ -145,13 +147,13 @@
   &__card-title {
     font-size: 1.125rem;
     font-weight: 500;
-    color: #111827;
+    color: $color-text-primary;
   }
 
   &__card-description {
     margin-top: 0.5rem;
     font-size: 0.875rem;
-    color: #6b7280;
+    color: $color-text-secondary;
     line-height: 1.5;
   }
 

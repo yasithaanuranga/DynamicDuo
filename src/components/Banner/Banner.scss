@@ -1,6 +1,8 @@
+@use '../../styles/index' as *;
+
 .banner {
-  background-color: #2563eb;
-  color: #ffffff;
+  background-color: $primary-blue;
+  color: $white;
   padding: 0.5rem 0;
   overflow: hidden;
 

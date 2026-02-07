@@ -1,0 +1,98 @@
+// ============================================
+// COLOR VARIABLES - Centralized Theme System
+// ============================================
+
+// ============================================
+// PRIMARY COLORS (Brand)
+// ============================================
+$primary-blue: #2563eb;
+$primary-blue-hover: #1d4ed8;
+$primary-blue-light: #3b82f6;
+$primary-blue-lightest: #dbeafe;
+
+// ============================================
+// NEUTRAL COLORS (Grayscale)
+// ============================================
+$white: #ffffff;
+$gray-50: #f9fafb;
+$gray-100: #f3f4f6;
+$gray-200: #e5e7eb;
+$gray-300: #d1d5db;
+$gray-400: #9ca3af;
+$gray-500: #6b7280;
+$gray-600: #4b5563;
+$gray-700: #374151;
+$gray-900: #111827;
+$black: #000000;
+
+// ============================================
+// SUCCESS COLORS (Green)
+// ============================================
+$success-light: #dcfce7;
+$success: #059669;
+$success-dark: #047857;
+
+// ============================================
+// ACCENT COLORS (Purple)
+// ============================================
+$accent-light: #f3e8ff;
+$accent: #7c3aed;
+$accent-dark: #6d28d9;
+
+// ============================================
+// PRODUCT TEASER THEME
+// ============================================
+$product-sunset: #ff7847;
+$product-ember: #2b0f0c;
+$product-rose: #fdd7c9;
+$product-sand: #fff4ee;
+$product-ink: #1b1210;
+$product-ocean: #0e3d59;
+$product-warm-1: #fff1e8;
+$product-warm-2: #ffe8dd;
+$product-warm-3: #fff8f2;
+$product-warm-4: #ffe0d4;
+$product-brown: #4b2c24;
+$product-brown-light: #b5441c;
+
+// ============================================
+// SEMANTIC COLORS (Application)
+// ============================================
+$color-background: $gray-50;
+$color-background-light: $white;
+$color-background-dark: $gray-100;
+
+$color-text-primary: $gray-900;
+$color-text-secondary: $gray-500;
+$color-text-tertiary: $gray-600;
+$color-text-light: $gray-700;
+$color-text-white: $white;
+
+$color-border: $gray-200;
+$color-border-light: $gray-300;
+
+$color-button-primary: $primary-blue;
+$color-button-primary-hover: $primary-blue-hover;
+$color-button-primary-text: $white;
+
+$color-button-secondary: $white;
+$color-button-secondary-hover: $gray-50;
+$color-button-secondary-text: $primary-blue;
+
+// ============================================
+// OVERLAY COLORS
+// ============================================
+$overlay-dark: rgba(0, 0, 0, 0.4);
+$overlay-darker: rgba(0, 0, 0, 0.5);
+$overlay-light: rgba(37, 99, 235, 0.1);
+
+// ============================================
+// FOCUS RING COLORS
+// ============================================
+$focus-ring: $primary-blue-light;
+$focus-ring-double: 0 0 0 2px $primary-blue, 0 0 0 4px $overlay-light;
+
+// ============================================
+// GRADIENT BACKGROUNDS
+// ============================================
+$gradient-product: radial-gradient(circle at top, $product-warm-1 0%, $product-warm-2 40%, $product-warm-3 100%);
