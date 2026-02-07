@@ -2,7 +2,21 @@
 
 .about {
   padding: 4rem 0;
-  background-color: $color-background-light;
+  background: transparent;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba($modern-blue-400, 0.12) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
 
   @media (min-width: 768px) {
     padding: 6rem 0;
@@ -50,15 +64,32 @@
   }
 
   &__content {
+    background: rgba($modern-slate-700, 0.7);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba($modern-slate-300, 0.25);
+    padding: 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 24px rgba($black, 0.15),
+                0 1px 0 rgba($modern-slate-300, 0.15),
+                inset 0 1px 0 $glass-overlay-strong;
+    position: relative;
+    z-index: 1;
+
     @media (min-width: 1024px) {
       order: 1;
+      padding: 2.5rem;
     }
   }
 
   &__title {
     font-size: 1.875rem;
     font-weight: 800;
-    color: $color-text-primary;
+    color: $white;
+    background: linear-gradient(135deg, $modern-blue-200 0%, $modern-green-200 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 
     @media (min-width: 768px) {
       font-size: 2.25rem;
@@ -68,7 +99,7 @@
   &__description {
     margin-top: 0.75rem;
     font-size: 1rem;
-    color: $color-text-secondary;
+    color: rgba($white, 0.9);
     line-height: 1.6;
 
     @media (min-width: 768px) {
@@ -100,16 +131,21 @@
     justify-content: center;
     height: 3rem;
     width: 3rem;
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid $glass-overlay-strong;
 
     &--blue {
-      background-color: $primary-blue-lightest;
-      color: $primary-blue;
+      background: rgba($modern-blue-400, 0.3);
+      color: $modern-blue-100;
+      box-shadow: 0 4px 16px rgba($modern-blue-400, 0.35);
     }
 
     &--green {
-      background-color: $success-light;
-      color: $success;
+      background: rgba($modern-green-400, 0.3);
+      color: $modern-green-100;
+      box-shadow: 0 4px 16px rgba($modern-green-400, 0.35);
     }
   }
 
@@ -125,13 +161,13 @@
   &__feature-title {
     font-size: 1.125rem;
     font-weight: 500;
-    color: $color-text-primary;
+    color: $white;
   }
 
   &__feature-description {
     margin-top: 0.5rem;
     font-size: 0.875rem;
-    color: $color-text-secondary;
+    color: rgba($white, 0.8);
     line-height: 1.5;
   }
 
@@ -142,9 +178,14 @@
   }
 
   &__mission-card {
-    background-color: $color-background;
-    border-radius: 0.5rem;
+    background: rgba($modern-slate-700, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba($modern-slate-300, 0.25);
+    border-radius: 1rem;
     padding: 1.5rem;
+    box-shadow: 0 8px 24px rgba($black, 0.15),
+                inset 0 1px 0 $glass-overlay-strong;
 
     @media (min-width: 768px) {
       padding: 2rem;
@@ -154,7 +195,11 @@
   &__mission-title {
     font-size: 1.25rem;
     font-weight: 600;
-    color: $color-text-primary;
+    color: $white;
+    background: linear-gradient(135deg, $modern-blue-300 0%, $modern-green-300 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 1rem;
 
     @media (min-width: 768px) {
@@ -163,7 +208,7 @@
   }
 
   &__mission-description {
-    color: $color-text-tertiary;
+    color: rgba($white, 0.8);
     font-size: 0.875rem;
     line-height: 1.6;
 

@@ -1,8 +1,13 @@
 @use '../../styles/index' as *;
 
 .footer {
-  background-color: $color-background-light;
-  border-top: 1px solid $color-border;
+  background: rgba($modern-slate-800, 0.85);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-top: 1px solid rgba($modern-slate-300, 0.25);
+  box-shadow: 0 -4px 24px rgba($black, 0.15),
+              inset 0 1px 0 $glass-overlay-strong;
+  position: relative;
 
   &__container {
     max-width: 80rem;
@@ -40,7 +45,11 @@
   &__title {
     font-size: 1.25rem;
     font-weight: 600;
-    color: $color-text-primary;
+    color: $white;
+    background: linear-gradient(135deg, $modern-blue-300 0%, $modern-green-300 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 
     @media (min-width: 768px) {
       font-size: 1.5rem;
@@ -50,7 +59,7 @@
   &__copyright {
     margin-top: 0.5rem;
     font-size: 0.875rem;
-    color: $color-text-secondary;
+    color: rgba($white, 0.7);
   }
 
   &__social {
@@ -61,11 +70,13 @@
   }
 
   &__social-link {
-    color: #9ca3af;
-    transition: color 0.2s ease;
+    color: rgba($white, 0.7);
+    transition: all 0.3s ease;
 
     &:hover {
-      color: #6b7280;
+      color: $modern-blue-300;
+      transform: translateY(-2px);
+      filter: drop-shadow(0 4px 12px rgba($modern-blue-400, 0.5));
     }
   }
 

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './Hero.scss';
+import FeaturesShowcase from '../FeaturesShowcase/FeaturesShowcase';
 
 const Hero = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -67,6 +68,7 @@ const Hero = () => {
         <div className="hero__glow hero__glow--1"></div>
         <div className="hero__glow hero__glow--2"></div>
       </div>
+      <FeaturesShowcase />
     </section>
   );
 };

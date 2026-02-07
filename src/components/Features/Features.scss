@@ -2,7 +2,8 @@
 
 .features {
   padding: 4rem 0;
-  background-color: $color-background;
+  background: transparent;
+  position: relative;
 
   @media (min-width: 768px) {
     padding: 6rem 0;
@@ -48,7 +49,11 @@
   &__title {
     font-size: 1.875rem;
     font-weight: 800;
-    color: $color-text-primary;
+    color: $white;
+    background: linear-gradient(135deg, $modern-blue-200 0%, $modern-green-200 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 
     @media (min-width: 768px) {
       font-size: 2.25rem;
@@ -59,7 +64,7 @@
     margin-top: 1rem;
     max-width: 32rem;
     font-size: 1.125rem;
-    color: $color-text-secondary;
+    color: rgba($white, 0.9);
     line-height: 1.6;
 
     @media (min-width: 768px) {
@@ -86,14 +91,41 @@
   }
 
   &__card {
-    background-color: $color-background-light;
+    background: rgba($modern-slate-700, 0.65);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba($modern-slate-300, 0.25);
     padding: 1.5rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    transition: box-shadow 0.2s ease;
+    border-radius: 1rem;
+    box-shadow: 0 8px 24px rgba($black, 0.15),
+                0 1px 0 rgba($modern-slate-300, 0.15),
+                inset 0 1px 0 $glass-overlay-strong;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba($modern-blue-400, 0.12) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
 
     &:hover {
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      transform: translateY(-5px);
+      border-color: rgba($modern-blue-400, 0.5);
+      box-shadow: 0 12px 32px rgba($modern-blue-400, 0.35),
+                  0 1px 0 rgba($modern-cyan-400, 0.3),
+                  inset 0 1px 0 rgba($white, 0.18);
+      
+      &::before {
+        opacity: 1;
+      }
     }
 
     @media (min-width: 640px) {
@@ -117,21 +149,27 @@
     justify-content: center;
     height: 3rem;
     width: 3rem;
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid $glass-overlay-strong;
 
     &--blue {
-      background-color: $primary-blue-lightest;
-      color: $primary-blue;
+      background: rgba($modern-blue-400, 0.3);
+      color: $modern-blue-100;
+      box-shadow: 0 4px 16px rgba($modern-blue-400, 0.35);
     }
 
     &--green {
-      background-color: $success-light;
-      color: $success;
+      background: rgba($modern-green-400, 0.3);
+      color: $modern-green-100;
+      box-shadow: 0 4px 16px rgba($modern-green-400, 0.35);
     }
 
     &--purple {
-      background-color: $accent-light;
-      color: $accent;
+      background: rgba($modern-indigo-400, 0.3);
+      color: $modern-indigo-100;
+      box-shadow: 0 4px 16px rgba($modern-indigo-400, 0.35);
     }
   }
 
@@ -147,13 +185,13 @@
   &__card-title {
     font-size: 1.125rem;
     font-weight: 500;
-    color: $color-text-primary;
+    color: $white;
   }
 
   &__card-description {
     margin-top: 0.5rem;
     font-size: 0.875rem;
-    color: $color-text-secondary;
+    color: rgba($white, 0.8);
     line-height: 1.5;
   }
 
