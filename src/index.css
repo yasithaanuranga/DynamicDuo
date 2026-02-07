@@ -29,11 +29,13 @@ body {
   min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
-  /* Using modern-slate colors: gradient from 800 -> 700 -> 600 */
-  background: linear-gradient(135deg, #1e293b 0%, #334155 25%, #475569 50%, #334155 75%, #1e293b 100%);
+  /* Theme-aware background gradient */
+  background: linear-gradient(135deg, var(--theme-bg-secondary) 0%, var(--theme-bg-primary) 25%, var(--theme-bg-primary) 50%, var(--theme-bg-secondary) 75%, var(--theme-bg-secondary) 100%);
   background-size: 400% 400%;
   animation: gradientShift 15s ease infinite;
   position: relative;
+  color: var(--theme-text-primary);
+  transition: var(--theme-transition);
 }
 
 body::before {
@@ -43,14 +45,15 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  /* Using modern-blue-400, modern-cyan-400, modern-indigo-400 with opacity */
+  /* Theme-aware radial glows using accent colors */
   background-image: 
-    radial-gradient(circle at 20% 50%, rgba(96, 165, 250, 0.12) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(34, 211, 238, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 20%, rgba(129, 140, 248, 0.11) 0%, transparent 50%);
+    radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
   pointer-events: none;
   z-index: 0;
   animation: floatGlow 20s ease-in-out infinite;
+  transition: var(--theme-transition);
 }
 
 @keyframes gradientShift {

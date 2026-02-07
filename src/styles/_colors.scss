@@ -183,3 +183,87 @@ $focus-ring-double: 0 0 0 2px $primary-blue, 0 0 0 4px $overlay-light;
 // GRADIENT BACKGROUNDS
 // ============================================
 $gradient-product: radial-gradient(circle at top, $product-warm-1 0%, $product-warm-2 40%, $product-warm-3 100%);
+
+// ============================================
+// THEME SYSTEM - CSS CUSTOM PROPERTIES
+// ============================================
+// Default theme (Modern with Gold accents)
+:root {
+  --theme-bg-primary: #1e293b;
+  --theme-bg-secondary: #0f172a;
+  --theme-text-primary: #e5e5e5;
+  --theme-text-secondary: #b0b0b0;
+  --theme-accent: #d4af37;
+  --theme-accent-secondary: #3498db;
+  --theme-accent-highlight: #e67e22;
+  --theme-accent-light: rgba(212, 175, 55, 0.15);
+  --theme-border: rgba(212, 175, 55, 0.3);
+  
+  --theme-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --theme-duration: 0.3s;
+}
+
+// 1. Dark Elegance Theme
+[data-theme="dark-elegance"] {
+  --theme-bg-primary: #1e1e2f;
+  --theme-bg-secondary: #0f0f1a;
+  --theme-text-primary: #f0f0f0;
+  --theme-text-secondary: #b8b8b8;
+  --theme-accent: #d4af37;
+  --theme-accent-secondary: #7f9cf5;
+  --theme-accent-highlight: #fbbf50;
+  --theme-accent-light: rgba(212, 175, 55, 0.12);
+  --theme-border: rgba(212, 175, 55, 0.25);
+}
+
+// 2. Minimal Professional Theme
+[data-theme="minimal-professional"] {
+  --theme-bg-primary: #ffffff;
+  --theme-bg-secondary: #f5f5f5;
+  --theme-text-primary: #1a1a1a;
+  --theme-text-secondary: #4a4a4a;
+  --theme-accent: #d4af37;
+  --theme-accent-secondary: #0d6efd;
+  --theme-accent-highlight: #6c757d;
+  --theme-accent-light: rgba(212, 175, 55, 0.1);
+  --theme-border: rgba(212, 175, 55, 0.2);
+}
+
+// 3. Muted Luxury Theme
+[data-theme="muted-luxury"] {
+  --theme-bg-primary: #f8f9fa;
+  --theme-bg-secondary: #e9ecef;
+  --theme-text-primary: #1f1f1f;
+  --theme-text-secondary: #505050;
+  --theme-accent: #d4af37;
+  --theme-accent-secondary: #0a9396;
+  --theme-accent-highlight: #ee6c4d;
+  --theme-accent-light: rgba(212, 175, 55, 0.1);
+  --theme-border: rgba(212, 175, 55, 0.2);
+}
+
+// 4. Deep Blue & Gold Theme
+[data-theme="deep-blue-gold"] {
+  --theme-bg-primary: #0b1d2a;
+  --theme-bg-secondary: #040f18;
+  --theme-text-primary: #f0f0f0;
+  --theme-text-secondary: #b8b8b8;
+  --theme-accent: #d4af37;
+  --theme-accent-secondary: #17c3b2;
+  --theme-accent-highlight: #f4d35e;
+  --theme-accent-light: rgba(212, 175, 55, 0.12);
+  --theme-border: rgba(212, 175, 55, 0.28);
+}
+
+// 5. Modern Slate with Gold Theme
+[data-theme="modern-slate-gold"] {
+  --theme-bg-primary: #2c3e50;
+  --theme-bg-secondary: #1a2332;
+  --theme-text-primary: #ecf0f1;
+  --theme-text-secondary: #a8adb5;
+  --theme-accent: #d4af37;
+  --theme-accent-secondary: #3498db;
+  --theme-accent-highlight: #e67e22;
+  --theme-accent-light: rgba(212, 175, 55, 0.12);
+  --theme-border: rgba(212, 175, 55, 0.25);
+}
